@@ -1,0 +1,94 @@
+/* css1.css - Foundation & Professional Variables (Force Light) */
+
+@font-face { font-family: 'BagusFont'; src: url('font/bagus.otf'); font-weight: 400; }
+@font-face { font-family: 'EstetikFont'; src: url('font/estetik.otf'); font-weight: 700; }
+
+:root {
+    /* Color Palette - SMM Pro Dashboard */
+    --bg-main: #F5F7FA;
+    --bg-card: #FFFFFF;
+    --primary: #3B5BDB; /* Royal Blue */
+    --primary-hover: #364FC7;
+    --primary-light: #EDF2FF;
+    --secondary: #64748B;
+    --text-dark: #1E293B;
+    --text-muted: #94A3B8;
+    --border-color: #E2E8F0;
+    
+    --success: #10B981;
+    --success-light: #D1FAE5;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --danger-light: #FEE2E2;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05);
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    
+    --font-base: 'BagusFont', system-ui, sans-serif;
+    --font-head: 'EstetikFont', system-ui, sans-serif;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Force Light Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #F5F7FA; --bg-card: #FFFFFF; --text-dark: #1E293B;
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-base);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+.hidden { display: none !important; }
+.fw-bold { font-weight: bold; }
+.text-primary { color: var(--primary); }
+.text-danger { color: var(--danger); }
+.text-success { color: var(--success); }
+.text-muted { color: var(--text-muted); }
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+
+/* Global Card Component */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+.card-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #fcfcfc;
+}
+.card-header h2 {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+.card-header h2 img { width: 22px; }
+.card-body { padding: 24px; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+/* Utility Grid */
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media(min-width: 992px) { .grid-2 { grid-template-columns: 1fr 1fr; } }

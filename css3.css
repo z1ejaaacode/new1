@@ -1,0 +1,124 @@
+/* css3.css - Dashboard & Form (REVISI DROPDOWN) */
+
+.main-container { padding: 90px 20px 40px; }
+@media(min-width: 1025px) { .main-container { padding: 100px 40px 40px; } }
+.content-section { margin-bottom: 30px; scroll-margin-top: 90px; }
+
+/* News Ticker & Hero (Sama) */
+.news-ticker { display: flex; align-items: center; background: var(--primary-light); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 24px; border: 1px solid #DCE4FF; }
+.ticker-label { background: var(--primary); color: white; padding: 10px 15px; font-weight: bold; font-size: 0.85rem; white-space: nowrap; }
+.ticker-content { flex: 1; padding: 0 15px; color: var(--primary); font-size: 0.9rem; font-weight: 500; }
+.hero-dashboard { background: linear-gradient(135deg, var(--primary), #5B7AFA); border-radius: var(--radius-md); padding: 40px; color: white; margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+.hero-dashboard::after { content: ''; position: absolute; right: -50px; bottom: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; }
+.hero-text h1 { font-size: 2rem; margin-bottom: 10px; }
+.hero-text p { opacity: 0.9; max-width: 600px; font-size: 1rem; }
+
+/* Stats Grid (Sama) */
+.dashboard-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.stat-card { background: var(--bg-card); padding: 20px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 20px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: var(--transition); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.stat-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; }
+.stat-card.blue .stat-icon { background: #EFF6FF; color: #3B82F6; }
+.stat-card.green .stat-icon { background: #ECFDF5; color: #10B981; }
+.stat-card.purple .stat-icon { background: #F5F3FF; color: #8B5CF6; }
+.stat-info p { font-size: 0.85rem; color: var(--text-muted); font-weight: bold; margin-bottom: 5px; }
+.stat-info h3 { font-size: 1.4rem; color: var(--text-dark); }
+
+/* FORM ORDER UI */
+.order-form-container { max-width: 800px; margin: 0 auto; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-dark); }
+.required { color: var(--danger); }
+
+/* Dropdown SaaS Style (REVISI: MENGGESER KE BAWAH) */
+.custom-dropdown { position: relative; }
+.dropdown-selected {
+    background: var(--bg-main); border: 1px solid var(--border-color); padding: 14px 16px;
+    border-radius: var(--radius-sm); display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: var(--transition); font-weight: 500;
+}
+.dropdown-selected:hover, .custom-dropdown.open .dropdown-selected { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); background: #fff; }
+.dropdown-selected span { display: flex; align-items: center; gap: 10px; }
+.dropdown-selected img { width: 18px; }
+
+/* REVISI UTAMA CSS3: Hapus position absolute, gunakan max-height transition */
+.dropdown-options {
+    width: 100%;
+    background: var(--bg-card); 
+    border: 1px solid transparent; 
+    border-radius: var(--radius-sm);
+    max-height: 0; /* Mulai dari 0 */
+    overflow: hidden; /* Sembunyikan isinya saat tertutup */
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease, margin 0.3s ease, border-color 0.3s ease;
+    margin-top: 0;
+}
+.custom-dropdown.open .dropdown-options {
+    max-height: 300px; /* Buka kebawah (sesuaikan jika daftar sangat panjang) */
+    overflow-y: auto;
+    opacity: 1;
+    border-color: var(--border-color);
+    margin-top: 8px;
+    margin-bottom: 15px; /* Menggeser elemen dibawahnya */
+}
+
+.option-item { padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border-bottom: 1px solid #f1f5f9; }
+.option-item:hover { background: var(--bg-main); }
+.option-content span { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 0.95rem; 
+    
+    /* Tambahkan ini agar teks dropdown panjang turun ke bawah */
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.option-content strong { color: var(--primary); }
+
+/* Input Target (Sama) */
+.input-icon-wrapper { position: relative; }
+.input-icon-wrapper img { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; opacity: 0.5; }
+.input-icon-wrapper input { width: 100%; padding: 14px 16px 14px 45px; border: 1px solid var(--border-color); background: var(--bg-main); border-radius: var(--radius-sm); font-size: 1rem; font-family: var(--font-base); transition: var(--transition); }
+.input-icon-wrapper input:focus { background: #fff; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+
+/* Service Info Box */
+.service-info-box { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-sm); padding: 15px; margin-bottom: 20px; border-left: 4px solid var(--primary); }
+.service-info-box h4 { font-size: 0.95rem; margin-bottom: 12px; color: var(--text-dark); display: flex; align-items: center; gap: 8px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85rem; }
+.info-item { display: flex; flex-direction: column; }
+.info-item span { color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
+.info-item strong { color: var(--text-dark); font-size: 0.95rem; }
+.full-width { grid-column: 1 / -1; }
+.info-item p { background: #fff; padding: 10px; border-radius: 4px; border: 1px dashed var(--border-color); margin-top: 4px; color: var(--secondary); line-height: 1.4; }
+
+/* Payment & Summary */
+.payment-method { display: flex; justify-content: space-between; align-items: center; padding: 15px; border: 2px solid var(--primary); border-radius: var(--radius-sm); background: #fff; }
+.pm-left { display: flex; align-items: center; gap: 15px; }
+.qris-logo { height: 28px; }
+.pm-title { display: block; font-weight: bold; color: var(--text-dark); }
+.pm-desc { font-size: 0.75rem; color: var(--success); }
+.check-icon { width: 18px; filter: invert(34%) sepia(85%) saturate(2469%) hue-rotate(218deg) brightness(96%) contrast(92%); }
+
+.checkout-summary { background: var(--bg-main); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); }
+.summary-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.summary-row span { font-weight: 600; color: var(--secondary); }
+.summary-row h3 { font-size: 1.5rem; margin: 0; }
+.summary-row.small { border-top: 1px dashed var(--border-color); padding-top: 10px; margin-top: 10px; }
+.summary-row.small span:last-child { font-weight: bold; color: var(--text-dark); }
+
+.btn-primary { width: 100%; padding: 16px; background: var(--primary); color: white; border: none; border-radius: var(--radius-sm); font-size: 1.05rem; font-weight: bold; cursor: pointer; transition: var(--transition); display: flex; justify-content: center; align-items: center; gap: 10px; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 91, 219, 0.3); }
+.agreement-text { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; }
+.agreement-text a { color: var(--primary); text-decoration: underline; }
+
+/* Perbaikan ukuran icon di dalam opsi dropdown */
+.option-content img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0; /* Mencegah icon gepeng jika teksnya panjang */
+    border-radius: 4px; /* Opsional: agar icon sedikit lebih rapi */
+}

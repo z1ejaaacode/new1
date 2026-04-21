@@ -1,0 +1,121 @@
+/* css4.css - Content, Tables & Contacts */
+
+/* Typography Content */
+.content-typography { color: var(--text-dark); line-height: 1.7; }
+.content-typography ul, .content-typography ol { padding-left: 20px; margin-bottom: 15px; }
+.content-typography li { margin-bottom: 8px; }
+.alert { padding: 15px; border-radius: var(--radius-sm); margin-bottom: 20px; font-size: 0.9rem; }
+.alert-warning { background: #FFFBEB; border: 1px solid #FDE68A; color: #92400E; }
+.border-danger { border-color: var(--danger-light); }
+.bg-danger-light { background: #FEF2F2; border-bottom-color: var(--danger-light); }
+
+/* Steps Timeline */
+.steps-timeline { display: flex; flex-direction: column; gap: 15px; }
+.step-item { display: flex; gap: 15px; background: var(--bg-main); padding: 15px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); }
+.step-num {
+    width: 30px; height: 30px; background: var(--primary); color: white;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    font-weight: bold; flex-shrink: 0;
+}
+.step-text { font-weight: 500; align-self: center; }
+
+/* Data Table Modern */
+.table-card { padding: 0; }
+.search-input { padding: 8px 15px; border: 1px solid var(--border-color); border-radius: 20px; font-family: var(--font-base); font-size: 0.85rem; outline: none; }
+.search-input:focus { border-color: var(--primary); }
+
+.table-responsive { overflow-x: auto; }
+.table-modern { width: 100%; border-collapse: collapse; min-width: 600px; }
+.table-modern th { background: var(--bg-main); padding: 15px 20px; text-align: left; font-size: 0.8rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border-color); }
+.table-modern td { padding: 15px 20px; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; vertical-align: middle; }
+.table-modern tr:hover td { background: #f8fafc; }
+.table-modern tr:last-child td { border-bottom: none; }
+
+.badge-id { background: var(--bg-main); padding: 4px 8px; border-radius: 4px; font-family: monospace; font-weight: bold; border: 1px solid var(--border-color); }
+.badge { padding: 5px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+.bg-success { background: var(--success-light); color: #065F46; }
+.bg-warning { background: #FEF3C7; color: #92400E; }
+.text-pink { color: #E1306C; }
+
+/* Contact Cards */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.contact-box { padding: 30px 20px; border-radius: var(--radius-md); text-align: center; border: 1px solid transparent; transition: var(--transition); }
+.wa-box { background: #F0FDF4; border-color: #BBF7D0; }
+.ig-box { background: #FEF2F2; border-color: #FECACA; }
+.contact-box .icon { font-size: 2.5rem; margin-bottom: 15px; }
+.wa-box .icon { color: #25D366; }
+.ig-box .icon { color: #E1306C; }
+.contact-box h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.contact-box p { font-size: 0.8rem; color: var(--secondary); margin-bottom: 15px; }
+.contact-box h2 { font-size: 1.4rem; margin-bottom: 20px; font-family: var(--font-base); }
+.btn-outline { display: inline-block; padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; border: 2px solid; }
+.wa-box .btn-outline { color: #16A34A; border-color: #16A34A; }
+.wa-box .btn-outline:hover { background: #16A34A; color: white; }
+.ig-box .btn-outline { color: #E1306C; border-color: #E1306C; }
+.ig-box .btn-outline:hover { background: #E1306C; color: white; }
+
+/* Footer */
+.main-footer { background: white; border-top: 1px solid var(--border-color); margin-top: auto; padding: 30px 20px; }
+.footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.footer-brand h3 { color: var(--primary); margin-bottom: 5px; }
+.footer-brand p { font-size: 0.85rem; color: var(--secondary); }
+.footer-copy { font-size: 0.85rem; color: var(--text-muted); }
+@media(min-width: 1025px) { .main-footer { margin-left: 280px; } }
+
+
+/* =========================================
+   FAQ ACCORDION STYLE
+   ========================================= */
+.accordion-container { display: flex; flex-direction: column; gap: 12px; }
+.accordion-item { border: 1px solid var(--border-color); border-radius: var(--radius-sm); overflow: hidden; background: white; }
+.accordion-header {
+    width: 100%; padding: 18px 20px; background: var(--bg-main); border: none;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.95rem; font-weight: 600; color: var(--text-dark); cursor: pointer; 
+    text-align: left; transition: var(--transition); font-family: var(--font-base);
+}
+.accordion-header:hover { background: var(--primary-light); color: var(--primary); }
+.accordion-header i { transition: transform 0.3s ease; color: var(--secondary); }
+.accordion-item.active .accordion-header i { transform: rotate(180deg); color: var(--primary); }
+.accordion-item.active .accordion-header { border-bottom: 1px dashed var(--border-color); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: white; }
+.accordion-content p { padding: 18px 20px; color: var(--secondary); font-size: 0.9rem; margin: 0; line-height: 1.6; }
+
+/* =========================================
+   TESTIMONI INSTAGRAM CAROUSEL STYLE
+   ========================================= */
+.ig-post-container {
+    max-width: 450px; margin: 0 auto; border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm); background: white; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.ig-post-header { display: flex; align-items: center; padding: 14px 16px; }
+.ig-profile-pic { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1px solid #e1e1e1; margin-right: 12px; }
+.ig-user-info { flex: 1; display: flex; flex-direction: column; line-height: 1.2; }
+.ig-username { font-weight: bold; font-size: 0.9rem; color: var(--text-dark); }
+.ig-location { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+.ig-more-options { color: var(--text-dark); cursor: pointer; }
+
+/* Area Slider Rasio 3:4 */
+.ig-slider-wrapper { position: relative; width: 100%; aspect-ratio: 3 / 4; background: #fafafa; overflow: hidden; border-top: 1px solid #f1f1f1; border-bottom: 1px solid #f1f1f1; }
+.ig-slider { display: flex; width: 100%; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.ig-slide-img { width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; }
+
+/* Tombol Navigasi Slider */
+.ig-nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.85); border: none; width: 32px; height: 32px;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    cursor: pointer; color: #262626; z-index: 10; opacity: 0; transition: opacity 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.ig-slider-wrapper:hover .ig-nav-btn { opacity: 1; }
+.ig-nav-btn.prev-btn { left: 12px; }
+.ig-nav-btn.next-btn { right: 12px; }
+
+/* Footer Post IG */
+.ig-post-footer { padding: 14px 16px; }
+.ig-actions { display: flex; justify-content: space-between; font-size: 1.5rem; color: #262626; margin-bottom: 12px; }
+.ig-actions-left { display: flex; gap: 16px; cursor: pointer; }
+.ig-likes { font-size: 0.9rem; margin-bottom: 6px; color: var(--text-dark); }
+.ig-caption { font-size: 0.9rem; color: var(--text-dark); line-height: 1.5; }

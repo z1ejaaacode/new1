@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selesaikan Pembayaran - Lannefy.id</title>
+    <link rel="stylesheet" href="pay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="pay-header">
+        <span class="logo-text">Lannefy.id</span>
+        <span class="secure-badge"><i class="fas fa-lock"></i> Secure Checkout</span>
+    </header>
+
+    <main class="pay-container">
+        
+        <div class="timer-card">
+            <h3>Selesaikan Pembayaran Dalam</h3>
+            <div class="countdown-text" id="countdownTimer">10:00</div>
+            <div class="progress-bg">
+                <div class="progress-fill bg-green" id="timerProgress"></div>
+            </div>
+            <p class="timer-warning"><i class="fas fa-info-circle"></i> Pesanan akan otomatis dibatalkan jika melewati batas waktu.</p>
+        </div>
+
+        <div class="grid-layout">
+            <div class="invoice-card">
+                <div class="invoice-header">
+                    <h2>Rincian Pesanan</h2>
+                    <span class="invoice-id" id="invId">INV-LNFY000</span>
+                </div>
+                
+                <div class="invoice-body">
+                    <div class="detail-row">
+                        <span>Kategori</span>
+                        <strong id="detKategori">-</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Layanan</span>
+                        <strong id="detLayanan">-</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Paket / Daftar Harga</span>
+                        <strong id="detPaket">-</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>Data Target</span>
+                        <strong class="target-text" id="detTarget">-</strong>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="total-row">
+                        <span>Total Pembayaran</span>
+                        <div class="total-price-box">
+                            <h2 id="detTotal">Rp 0</h2>
+                            <button class="copy-btn" id="copyTotal" title="Salin Nominal"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-action-card">
+                <div class="qris-section">
+                    <h3><img src="pict/qris.png" alt="QRIS" class="qris-title-logo"> Scan untuk Membayar</h3>
+                    <div class="qris-img-container">
+                        <img src="pict/qrpay.jpg" alt="QRIS Lannefy" id="qrisImage">
+                    </div>
+                    
+                    <button class="btn-download" id="btnDownloadQris">
+                        <i class="fas fa-download"></i> Unduh QRIS
+                    </button>
+                    <p class="instruction-text">
+                        Gunakan aplikasi M-Banking atau E-Wallet (Dana, Ovo, Gopay, Spay) untuk scan kode QR di atas. Kembali ke website setelah menyelesaikan pembayaran untuk konfirmasi ke admin.
+                    </p>
+                </div>
+
+                <div class="confirmation-section hidden" id="confirmationBox">
+                    <div class="conf-alert">
+                        <i class="fas fa-check-circle"></i> Sudah menyelesaikan pembayaran?
+                    </div>
+                    <p>Klik tombol di bawah ini untuk konfirmasi. Kirimkan format pesanan yang tertera beserta <strong>bukti transfer</strong> agar pesanan segera diproses.</p>
+                    
+                    <a href="#" class="btn-whatsapp" id="btnConfirmWa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Konfirmasi ke Admin
+                    </a>
+                </div>
+
+                <button class="btn-cancel" id="btnResetOrder">
+                    <i class="fas fa-redo"></i> Buat Ulang Pesanan
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="pay.js"></script>
+</body>
+</html>
