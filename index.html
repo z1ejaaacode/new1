@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Lannefy.id — SMM Panel Termurah & Tercepat untuk Social Media</title>
+    <link rel="stylesheet" href="css1.css">
+    <link rel="stylesheet" href="css2.css">
+    <link rel="stylesheet" href="css3.css">
+    <link rel="stylesheet" href="css4.css">
+    <link rel="stylesheet" href="css5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" type="image/png" href="lannefy.png">
+</head>
+<body>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <a href="https://wa.me/6283894934396" class="floating-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="pict/hamburger.png" alt="Menu" class="menu-toggle" id="menuToggle">
+            <span class="logo-text">Lannefy SMM Panel</span>
+        </div>
+        </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand">
+                <img src="lannefy.png" alt="Logo" class="sidebar-logo">
+                <span class="sidebar-title">Lannefy</span>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">&times;</button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-label">MENU UTAMA</div>
+            <ul>
+                <li><a href="#dashboard" class="active"><img src="pict/home.png" alt="icon"> Dashboard</a></li>
+                <li><a href="#price"><img src="pict/pricelist.png" alt="icon"> Buat Pesanan</a></li>
+            </ul>
+            
+            <div class="nav-label">INFORMASI</div>
+            <ul>
+                <li><a href="#aturan"><img src="pict/aturan.png" alt="icon"> Aturan Order  <span class="nav-badge new">Wajib baca</span></a></li>
+                <li><a href="#panduan"><img src="pict/panduan.png" alt="icon"> Panduan Sistem</a></li>
+                <li><a href="#kontak"><img src="pict/kontak.png" alt="icon"> Bantuan / Tiket</a></li>
+               
+<li><a href="#testi"><img src="pict/testi.png" alt="icon"> Testimoni Pelanggan</a></li>
+
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-container">
+
+        <section id="dashboard" class="content-section card-appear">
+            <div class="news-ticker">
+                <div class="ticker-label"><i class="fas fa-bullhorn"></i> INFO</div>
+                <div class="ticker-content">
+                    <marquee behavior="scroll" direction="left" scrollamount="5">
+                        Selamat datang di Lannefy.id! Pusat SMM Panel dengan harga termurah dan kualitas terbaik!
+                    </marquee>
+                </div>
+            </div>
+
+            <div class="hero-dashboard">
+                <div class="hero-text">
+                    <h1>SMM Panel Terpercaya & Termurah</h1>
+                    <p>Hallo! Selamat datang di Toko Lannefy.id pusat SMM Panel Termurah & terpercaya.</p>
+                    <br>
+                        <p> Menyediakan kebutuhan sosial media seperti followers, likes, views dan lain lain. banyak layanan yang dapat dipilih dan disesuaikan pas di budget. tingkatkan akun sosial media mu dengan lannefy.id ! 
+                    </p>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card green">
+                    <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="stat-info"><p>Pesanan Selesai</p><h3>1017 Pesanan</h3></div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-icon"><i class="fas fa-tags"></i></div>
+                    <div class="stat-info"><p>Layanan Aktif</p><h3>20+ Layanan</h3></div>
+                </div>
+                                <div class="stat-card blue">
+                    <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+                    <div class="stat-info"><p>Metode Pembayaran</p><h3>QRIS All Payment</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="price" class="content-section">
+            <div class="order-grid">
+                <div class="order-form-container card">
+                    <div class="card-header">
+                        <h2><img src="pict/pricelist.png" alt="icon"> Buat Pesanan</h2>
+                    </div>
+                    
+                    <form id="orderForm" class="card-body">
+                        <div class="form-group">
+                            <label>Kategori Layanan <span class="required">*</span></label>
+                            <div class="custom-dropdown" id="categoryDropdown">
+                                <div class="dropdown-selected">
+                                    <span><img src="pict/option.png" alt="icon"> Pilih Kategori...</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="dropdown-options" id="categoryOptions"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="serviceGroup">
+                            <label>Layanan <span class="required">*</span></label>
+                            <div class="custom-dropdown" id="serviceDropdown">
+                                <div class="dropdown-selected">
+                                    <span>Pilih Layanan...</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="dropdown-options" id="serviceOptions"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="packageGroup">
+                            <label>Daftar Harga <span class="required">*</span></label>
+                            <div class="custom-dropdown" id="packageDropdown">
+                                <div class="dropdown-selected">
+                                    <span>Pilih Daftar Harga...</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="dropdown-options" id="packageOptions"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="targetGroup">
+                            <label>Data Target <span class="required">*</span></label>
+                            <div class="input-icon-wrapper">
+                                <img src="pict/username.png" alt="icon">
+                                <input type="text" id="targetInput" placeholder="Link Akun / Link Post" autocomplete="off">
+                            </div>
+                            <small class="helper-text text-primary"><i class="fas fa-info-circle"></i> Pastikan username/link yang di input sudah benar.</small>
+                        </div>
+
+                        <div class="service-info-box" id="serviceInfoBox">
+                            <h4><i class="fas fa-list-ul"></i> Detail Layanan</h4>
+                            <div class="info-grid">
+                                <div class="info-item full-width"><span>Estimasi Masuk:</span> <strong id="infoEst">-</strong></div>
+                                <div class="info-item full-width">
+                                    <span>Deskripsi Layanan:</span>
+                                    <p id="infoDesc">-</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="paymentGroup">
+                            <label>Metode Pembayaran</label>
+                            <div class="payment-method selected">
+                                <div class="pm-left">
+                                    <img src="pict/qris.png" alt="QRIS" class="qris-logo">
+                                    <div>
+                                        <span class="pm-title">QRIS All Payment</span>
+                                        <span class="pm-desc"> Bebas biaya admin </span>
+                                    </div>
+                                </div>
+                                <img src="pict/cek.png" alt="checked" class="check-icon">
+                            </div>
+                        </div>
+
+                        <div class="checkout-summary" id="submitGroup">
+                            <div class="summary-row">
+                                <span>Total Bayar:</span>
+                                <h3 id="totalPayText" class="text-primary">Rp 0</h3>
+                            </div>
+                            <button type="submit" class="btn-primary mt-15">
+                                <i class="fas fa-paper-plane"></i> Buat Pesanan
+                            </button>
+                            <p class="agreement-text">Dengan menekan tombol buat pesanan, Anda menyetujui <a href="#aturan">Syarat & Ketentuan</a> kami.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="aturan" class="content-section">
+            <div class="card">
+                <div class="card-header">
+                    <h2><img src="pict/aturan.png" alt="icon"> Syarat & Ketentuan Order</h2>
+                </div>
+                <div class="card-body content-typography">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> Membaca aturan ini adalah wajib. Kesalahan pengguna tidak akan mendapatkan kompensasi/refund.
+                    </div>
+                    <ul>
+                        <li>1. Pastikan akun target <strong>BERSIFAT PUBLIK (TIDAK PRIVATE)</strong> selama proses pengerjaan.</li>
+                        <li>2. Jangan mengubah username akun selama pesanan masih berstatus <em>Pending</em> atau <em>Processing</em>.</li>
+                        <li>3. Dilarang memasukkan pesanan yang sama (double order) pada target yang sama sebelum pesanan sebelumnya berstatus <em>Success</em>.</li>
+                        <li>4. Gunakan layanan <strong>HIGH QUALITY</strong> untuk mendapatkan hasil yang maksimal.</li>
+                        <li>5. Menggunakan layanan kualitas <em>Rendah</em> mungkin akan mengalami drop dengan persentase tinggi, <strong>NO COMPLAIN !!</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="panduan" class="content-section">
+            
+
+                <div class="card border-danger">
+                    <div class="card-header bg-danger-light"><h2 class="text-danger"><i class="fas fa-shield-alt"></i> Matikan Fitur Laporkan untuk ditinjau (Khusus IG)</h2></div>
+                    <div class="card-body content-typography">
+                        <p>Agar followers Instagram masuk dengan lancar, Anda <strong>WAJIB</strong> mematikan fitur keamanan ini:</p>
+                        <ol>
+                            <li>Buka aplikasi Instagram > <strong>Pengaturan</strong>.</li>
+                            <li>Cari menu <strong>Ikuti dan undang teman</strong>.</li>
+                            <li>Nonaktifkan fitur <strong>Laporkan untuk ditinjau</strong>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="grid-2">
+                <div class="card">
+                    <div class="card-header"><h2><img src="pict/panduan.png" alt="icon"> Cara Pemesanan</h2></div>
+                    <div class="card-body steps-timeline">
+                        <div class="step-item"><div class="step-num">1</div><div class="step-text">Pilih Kategori layanan > Pilih layanan > Pilih Daftar harga.</div></div>
+                        <div class="step-item"><div class="step-num">2</div><div class="step-text">Isi data-target dengan link acc (jika order followers) dan link post (jika order likes/views).</div></div>
+                        <div class="step-item"><div class="step-num">3</div><div class="step-text">Baca dengan teliti Detail layanan yang kamu pilih seperti kualitas layanan, estimasi layanan, dan deskripsi layanan nya.</div></div>
+                        <div class="step-item"><div class="step-num">4</div><div class="step-text">Klik Buat Pesanan dan selesaikan pembayaran lalu konfirmasi ke admin maka pesanan akan diproses.</div></div>
+                    </div>
+                </div>
+        </section>
+
+       
+
+        <section id="kontak" class="content-section">
+            <div class="card">
+                <div class="card-header"><h2><img src="pict/kontak.png" alt="icon"> Pusat Bantuan</h2></div>
+                <div class="card-body">
+                    <div class="contact-grid">
+                        <div class="contact-box wa-box">
+                            <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                            <h3>WhatsApp Admin</h3>
+                            <h2>62+ 838-9493-4396</h2>
+                            <a href="https://wa.me/6283894934396" target="_blank" class="btn-outline">Hubungi Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+                
+
+        <section id="testi" class="content-section">
+            <div class="card">
+                <div class="card-header">
+                    <h2><img src="pict/testi.png" alt="icon"> Testimoni Pelanggan</h2>
+                </div>
+                <div class="card-body">
+                    <div class="ig-post-container">
+                        <div class="ig-post-header">
+                            <img src="lannefy.png" alt="Profile" class="ig-profile-pic">
+                            <div class="ig-user-info">
+                                <span class="ig-username">Lannefy.id</span>
+                                <span class="ig-location">Testimoni Terpercaya</span>
+                            </div>
+                            <i class="fas fa-ellipsis-h ig-more-options"></i>
+                        </div>
+                        
+                        <div class="ig-slider-wrapper">
+                            <div class="ig-slider">
+                                <img src="pict/testi1.png" alt="Testimoni 1" class="ig-slide-img">
+                                <img src="pict/testi2.png" alt="Testimoni 2" class="ig-slide-img">
+                                <img src="pict/testi3.png" alt="Testimoni 3" class="ig-slide-img">
+                                <img src="pict/testi4.png" alt="Testimoni 4" class="ig-slide-img">
+                                <img src="pict/testi5.png" alt="Testimoni 5" class="ig-slide-img">
+                                <img src="pict/testi6.png" alt="Testimoni 6" class="ig-slide-img">
+                                <img src="pict/testi7.png" alt="Testimoni 7" class="ig-slide-img">
+                                <img src="pict/testi8.png" alt="Testimoni 8" class="ig-slide-img">
+                                <img src="pict/testi9.png" alt="Testimoni 9" class="ig-slide-img">
+                                <img src="pict/testi10.png" alt="Testimoni 10" class="ig-slide-img">
+                            </div>
+                            <button class="ig-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="ig-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        
+                        <div class="ig-post-footer">
+                            <div class="ig-actions">
+                                <div class="ig-actions-left">
+                                    <i class="far fa-heart"></i>
+                                    <i class="far fa-comment"></i>
+                                    <i class="far fa-paper-plane"></i>
+                                </div>
+                                <i class="far fa-bookmark"></i>
+                            </div>
+                            <div class="ig-likes">Disukai oleh <strong>17.010 pelanggan</strong></div>
+                            <br>
+                            <div class="ig-caption">
+                                <strong>Lannefy.id</strong> Geser foto ke kanan untuk melihat beberapa testimoni dari pelanggan setia kami yang puas dengan layanan SMM Panel Lannefy! 🔥✨
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>Lannefy.id</h3>
+                <p>Platform SMM Terpercaya di Indonesia.</p>
+            </div>
+            <div class="footer-copy">&copy; 2026 Lannefy.id Enterprise. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-card card-appear">
+            <div class="modal-icon processing"><i class="fas fa-cart-shopping cart-moving"></i></div>
+            <h3>Memuat Pesanan</h3>
+            <p class="modal-desc">Pesanan sedang dibuat, mohon tunggu...</p>
+            <div class="progress-wrap">
+                <div class="progress-bar-container"><div class="progress-bar-fill" id="progressBar"></div></div>
+                <div class="progress-info">
+                    <span id="progressText" class="text-danger fw-bold">Menginisialisasi...</span>
+                    <span id="progressPercent" class="fw-bold">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="price.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-database-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCEgC-zjiqpPyDze-37BIj3o5DaifN0A5E",
+    authDomain: "lannefyid.firebaseapp.com",
+    databaseURL: "https://lannefyid-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "lannefyid",
+    storageBucket: "lannefyid.firebasestorage.app",
+    messagingSenderId: "64663199514",
+    appId: "1:64663199514:web:a68833d05fc3876a6696a3"
+  };
+  
+  // Inisialisasi global agar dikenali oleh script.js
+  if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+  }
+  var db = firebase.database(); // Gunakan 'var' agar terbaca secara global
+</script>
+
+
+<script src="script.js"></script>
+
+    
+    
+</body>
+</html>
